@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { htmlWebpackPlugin } = require('./plugins/htmlWebpack');
 const { cleanWebpackPlugin } = require('./plugins/cleanWebpack');
 const { compressWebpack } = require('./plugins/compression');
+const { DefinePlugin } = require('webpack');
 
 module.exports = {
   entry: {
@@ -12,7 +13,8 @@ module.exports = {
     path: path.resolve('dist'),
     filename: '[name].[fullhash].js',
     clean: true,
-    chunkFilename: '[name].[chunkhash].chunk.js'
+    chunkFilename: '[name].[chunkhash].chunk.js',
+    publicPath: "/"
   },
   resolve: {
     extensions: ['*','.js', '.jsx', '.json', '.ts', '.tsx'],
@@ -32,6 +34,10 @@ module.exports = {
         test: /\.css$/,
         loader: 'css-loader',
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      }
     ],
   },
   devServer: {
@@ -43,6 +49,6 @@ module.exports = {
   plugins: [
     htmlWebpackPlugin(),
     cleanWebpackPlugin(),
-    compressWebpack(),
+    compressWebpack()
   ],
 }
