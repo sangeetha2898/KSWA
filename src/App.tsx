@@ -15,7 +15,7 @@ const App = () => {
             <meta name={'description'} content={APP_DESC} />
         </Helmet>
         <Link to={'/home'}>Home</Link><br />
-        <Link to={'/test'}>Test</Link>
+        <Link to={'/pokemon'}>Pokemon</Link>
             <Suspense fallback={<> </>}>
                 {useRoutes(ROUTES)}
             </Suspense>
