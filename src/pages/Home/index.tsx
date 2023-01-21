@@ -1,23 +1,36 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { IAppState } from '../../core/redux/RootState'
-import { initHome } from './home.action'
+import { HomeStyles } from './Home.styles'
+import Header from '../../components/Header/Header'
+
+const listItems = [
+    {
+        title: 'About us',
+        onClick: () => {},
+        customComponent: <></>
+    },
+    {
+        title: 'Gallery',
+        onClick: () => {},
+        customComponent: <></>
+    },
+    {
+        title: 'Contact Us',
+        onClick: () => {},
+        customComponent: <></>
+    },
+    {
+        title: 'Donate',
+        onClick: () => {},
+        customComponent: <></>
+    },
+  ]
 
 const Home:React.FC<any> = () => {
-    const { message, loading } = useSelector((store: IAppState) => store.Home)
-    const dispatch = useDispatch()
-
-    const btnAction = () => {
-        dispatch(initHome())
-    }
-
+    const classes = HomeStyles()
     return (
-        <>
-        <h1>Welcome to React from Home</h1>
-        <h4>Message: {message}</h4>
-        {loading ? <p>Loading...</p> : <></>}
-        <button onClick={btnAction}>Hello world</button>
-        </>
+        <div>
+            <Header listItems={listItems} />
+        </div>
     )
 }
 

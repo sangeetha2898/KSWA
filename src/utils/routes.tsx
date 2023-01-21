@@ -1,16 +1,11 @@
 import React from 'react';
 
-export const LazyHomeComponent = React.lazy(() => import(/* webpackChunkName: "Home" */'../pages/Home'))
-export const LazyPokemonComponent = React.lazy(() => import(/* webpackChunkName: "Pokemon" */'../pages/Pokemon'))
+export const LazyHomeComponent = React.lazy(() => import(/* webpackChunkName: "HomePage" */'../pages/Home'))
 
 const ROUTES = [
     {
-        path: "/home",
+        path: "/",
         element: <LazyHomeComponent />
-    },
-    {
-        path: "/pokemon",
-        element: <LazyPokemonComponent />
     },
     {
         path: '*',
