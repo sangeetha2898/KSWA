@@ -4,9 +4,11 @@ import { Link, useRoutes } from 'react-router-dom'
 import MyErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import ROUTES from './utils/routes';
 import './style.css'
+import './slick/slick.css'
+import './slick/slick-theme.css'
 
-const APP_TITLE = 'Webapp boilerplate'
-const APP_DESC = 'boilerplate for webapp using rxjs, redux and typescript'
+const APP_TITLE = 'Karnataka Wheelchair Cricket Association'
+const APP_DESC = 'KSCA - One stop for wheelchair cricket association.'
 
 const App = () => {
  return (

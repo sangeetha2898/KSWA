@@ -17,7 +17,7 @@ module.exports = {
     publicPath: "/"
   },
   resolve: {
-    extensions: ['*','.js', '.jsx', '.json', '.ts', '.tsx'],
+    extensions: ['*','.js', '.jsx', '.json', '.ts', '.tsx', '.css'],
   },
   module: {
     rules: [
@@ -32,7 +32,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'css-loader',
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
